@@ -1,5 +1,7 @@
 # ai-job-matcher
 
+**English** | [Українська](README.uk.md)
+
 A personal job-search assistant I run every day while looking for an automation / AI role in Poland.
 It reads new postings, filters them with plain code, lets an LLM score what is left against a bank of my real
 experience, and sends a short digest to Telegram. One tap on a posting builds a one-page CV and a cover note for
