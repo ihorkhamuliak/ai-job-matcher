@@ -1,0 +1,57 @@
+# Банк для тестів кроку 4: та сама форма, що facts.yaml, дані вигадані (справжній банк у git не йде, RODO)
+person:
+  name: Test Person
+  location: {en: "Poznań, Poland", pl: "Poznań, Polska"}
+  email: test@example.com
+  links: {linkedin: "https://linkedin.example/t", github: "https://github.example/t", site: "https://site.example"}
+  education: {en: "Uni · CS", pl: "Uni · Informatyka"}
+languages: [{name: English, level: B1}]
+cv:
+  title: "AUTOMATION DEVELOPER"
+  headings:
+    en: {summary: SUMMARY, experience: EXPERIENCE, skills: SKILLS, education: EDUCATION, languages: LANGUAGES}
+    pl: {summary: PODSUMOWANIE, experience: DOŚWIADCZENIE, skills: UMIEJĘTNOŚCI, education: WYKSZTAŁCENIE, languages: JĘZYKI}
+  earlier: {en: "Earlier roles", pl: "Wcześniejsze role"}
+  languages_line: {en: "English", pl: "angielski"}
+  basics_label: {en: "Basics", pl: "Podstawy"}
+  rodo: "Zgoda RODO."
+  tail: {en: "Tail EN.", pl: "Tail PL."}
+  headline_default: ["Python", "n8n", "Docker", "REST APIs", "Google Sheets"]
+summaries:
+  - {id: automation, when: "база", lead: {en: "Automation developer", pl: "Automation developer"}, en: "Body EN.", pl: "Body PL."}
+  - {id: ai-process, when: "AI", lead: {en: "Process automation with AI", pl: "Automatyzacja procesów z AI"}, en: "AI EN.", pl: "AI PL."}
+  - {id: data, when: "дані", approved: false, lead: {en: "Data", pl: "Dane"}, en: "Data EN.", pl: "Data PL."}
+roles:
+  - {id: role-freelance, en: "Freelance", pl: "Freelance PL", dates: {en: "2025 – Present", pl: "2025 – obecnie"}}
+  - {id: role-media, en: "Media", pl: "Media PL", dates: {en: "2025 – Present", pl: "2025 – obecnie"}}
+  - {id: role-ads, en: "Ads", pl: "Ads PL", dates: {en: "2026 – Present", pl: "2026 – obecnie"}}
+  - {id: role-earlier, en: "Shop (2025).", pl: "Sklep (2025)."}
+facts:
+  - {id: f1, role: role-freelance, en: "F1 en", pl: "F1 pl"}
+  - {id: f2, role: role-freelance, en: "F2 en", pl: "F2 pl"}
+  - {id: f3, role: role-freelance, en: "F3 en <b>0 of 12</b>", pl: "F3 pl"}
+  - {id: m1, role: role-media, en: "M1 en", pl: "M1 pl"}
+  - {id: m2, role: role-media, en: "M2 en", pl: "M2 pl"}
+  - {id: m3, role: role-media, en: "M3 en", pl: "M3 pl"}
+  - {id: a1, role: role-ads, en: "A1 en", pl: "A1 pl"}
+  - {id: a2, role: role-ads, en: "A2 en", pl: "A2 pl"}
+  - {id: a3, role: role-ads, en: "A3 en", pl: "A3 pl"}
+skills:
+  automation:
+    label: {en: "Automation", pl: "Automatyzacja"}
+    items: [{name: n8n, evidence: [x]}, {name: webhooks, pl: webhooki, evidence: [x]}]
+  python:
+    label: {en: "Python ecosystem", pl: "Ekosystem Pythona"}
+    items: [{name: "Python 3", short: Python, evidence: [x]}, {name: NumPy, hidden: true, evidence: [x]}]
+  integrations:
+    label: {en: "Integrations", pl: "Integracje"}
+    items: [{name: "REST APIs", pl: "REST API", evidence: [x]},
+            {name: "Google Sheets &amp; Drive API", pl: "Google Sheets i Drive API", short: "Google Sheets", evidence: [x]}]
+  infrastructure:
+    label: {en: "Infrastructure", pl: "Infrastruktura"}
+    items: [{name: "Docker &amp; Docker Compose", pl: "Docker i Docker Compose", short: Docker, evidence: [x]}]
+  basics:
+    label: {en: "Basics", pl: "Podstawy"}
+    items: [{name: SQL, level: basics, evidence: [x]}, {name: "Power BI", level: basics, evidence: [x]},
+            {name: SciPy, level: basics, hidden: true, evidence: [x]}]
+learning: [Excel]

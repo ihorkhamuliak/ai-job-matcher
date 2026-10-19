@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+data/
+.env
+# personal data never goes to git
+facts.yaml
+cv/
+*.pdf
+*.docx

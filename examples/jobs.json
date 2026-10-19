@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Junior AI Automation Specialist",
+    "company": "Acme Data Sp. z o.o.",
+    "url": "https://example.com/jobs/acme-junior-ai-automation",
+    "cities": ["Poznań"],
+    "mode": "hybrid",
+    "seniority": ["junior"],
+    "salary": "8 000 - 10 000 PLN brutto / mies.",
+    "age_days": 1,
+    "text": "Wymagania:\nDoświadczenie z n8n, Make lub Zapier\nIntegracje przez REST API i webhooki\nPodstawy SQL\nJęzyk angielski na poziomie B1\nObowiązki:\nAutomatyzacja procesów biura obsługi klienta\nWdrażanie asystentów AI (OpenAI, Claude)\nDokumentacja wdrożeń"
+  },
+  {
+    "title": "AI Integration Engineer",
+    "company": "Contoso Software",
+    "url": "https://example.com/jobs/contoso-ai-integration",
+    "cities": ["Warszawa"],
+    "mode": "hybrid",
+    "seniority": ["mid"],
+    "salary": "",
+    "age_days": 3,
+    "text": "Requirements:\nExperience building LLM workflows in production\nPython and REST APIs\nStrong written and spoken English\nNative or fluent Polish\nResponsibilities:\nBuild agents that automate customer support\nIntegrate with CRM and ticketing systems"
+  },
+  {
+    "title": "Senior Data Platform Engineer",
+    "company": "Fabrikam Analytics",
+    "url": "https://example.com/jobs/fabrikam-senior-data",
+    "cities": [],
+    "mode": "remote",
+    "seniority": ["senior"],
+    "salary": "",
+    "age_days": 2,
+    "text": "Requirements:\nMinimum 6 years of commercial experience in data engineering\nSpark, Kafka, Airflow\nEnglish C1"
+  },
+  {
+    "title": "Specjalista ds. wsparcia technicznego",
+    "company": "Northwind Retail",
+    "url": "https://example.com/jobs/northwind-helpdesk",
+    "cities": ["Kraków"],
+    "mode": "office",
+    "seniority": ["junior"],
+    "salary": "5 000 PLN brutto / mies.",
+    "age_days": 5,
+    "text": "Wymagania:\nKomunikatywność\nPodstawowa znajomość systemu Windows\nPraca stacjonarna w biurze w Krakowie\nObowiązki:\nObsługa zgłoszeń użytkowników przez telefon"
+  },
+  {
+    "title": "Programista PLC / automatyk",
+    "company": "Contoso Energy",
+    "url": "https://example.com/jobs/contoso-plc",
+    "cities": ["Poznań"],
+    "mode": "office",
+    "seniority": ["mid"],
+    "salary": "",
+    "age_days": 1,
+    "text": "Programowanie sterowników PLC Siemens, systemy SCADA."
+  }
+]
