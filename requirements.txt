@@ -3,4 +3,4 @@ tzdata==2026.4  # time zones on Windows
 anthropic==1.11.0  # scoring and CV choice
 PyYAML==6.0.3  # facts bank (facts.yaml)
 weasyprint==70.0  # CV to PDF; 69.0 has GHSA-r543 (EPS -> RCE) and an SSRF per OSV, 70.0 is clean
-pypdf==6.19.0  # PDF output check by extracted text (1 page, name, GDPR clause)
+pypdf==6.21.2  # PDF output check by extracted text (1 page, name, GDPR clause)
