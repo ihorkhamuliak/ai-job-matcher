@@ -428,3 +428,15 @@ def test_unknown_or_broken_callback_is_answered_not_crashed(db):
     press(db, b, f"a:{sid}")  # the check-mark button is gone since 12.10: an old button writes nothing
     assert db.execute("SELECT COUNT(*) FROM actions").fetchone()[0] == 0
     assert [m for m, _ in b.http.posts] == ["answerCallbackQuery"] * 3
+
+
+def test_poisoned_llm_fields_cannot_blow_the_card_over_telegram_limit():
+    s = {"why": "x" * 5000, "tasks": ["t" * 900] * 3, "requirements": ["r" * 900] * 5, "stack": ["s" * 900] * 8,
+         "offer": ["o" * 900] * 3, "matched": ["m" * 900] * 5, "missing": ["n" * 900] * 4, "contract": "c" * 500}
+    text = tg.card(9, job(1), s, [])
+    assert len(text) <= tg.CARD_MAX and text.startswith("🟢") and "x" * 401 not in text
+
+
+def test_real_length_fields_are_not_cut():
+    text = tg.card(8, job(1), {"why": "w" * 247, "stack": ["s" * 101], "missing": [], "contract": "b2b"}, [])
+    assert "w" * 247 in text and "s" * 101 in text and "…" not in text

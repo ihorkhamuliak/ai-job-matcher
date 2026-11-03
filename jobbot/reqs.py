@@ -19,7 +19,9 @@ _NICE = re.compile(r"nice[ -]to[ -]have|\bis a plus|would be a plus|big plus|adv
                    re.I)
 _EXP_WORD = re.compile(r"experience|doświadcz|praktyk|podobnym stanowisku|similar (role|position)|досвід|опыт", re.I)
 _YEAR = r"(?:years?|yrs?|lat[a]?|rok(?:u)?|років|роки|рік)"
-_NUM_YEARS = re.compile(rf"(\d{{1,2}})(?:[.,]5)?\s*(?:\+|-|–|to|do|або)?\s*(?:\d{{1,2}}\s*)?\+?\s*{_YEAR}\b", re.I)
+# Each \s* only AFTER a required token: four \s* in a row split a long whitespace run between them, and
+# "1" + 800 spaces took 7 s (cubic). Checked on 153k real ad lines: identical matches.
+_NUM_YEARS = re.compile(rf"(\d{{1,2}})(?:[.,]5)?\s*(?:(?:\+|-|–|to|do|або)\s*)?(?:\d{{1,2}}\s*)?(?:\+\s*)?{_YEAR}\b", re.I)
 _WORD_YEARS = {r"\broczn|\bjednoroczn|\bone year|\bрічн": 1, r"dwulet|dwa lata|\btwo years|дворічн|два роки": 2,
                r"trzylet|trzy lata|\bthree years|трирічн|три роки": 3, r"kilkulet|several years|kilka lat|кілька років": 3,
                r"czteroletn|cztery lata|four years": 4, r"pięcioletn|pięć lat|five years|п'ять років": 5}

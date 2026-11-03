@@ -270,3 +270,10 @@ def test_real_level_values_from_boards():
     assert level(job(seniority=["Specjalista / specjalistka (mid)"])) == "mid"
     assert level(job(seniority=["Dyrektor / Dyrektorka"])) == "high"
     assert level(job(seniority=["Staż"])) == "low"
+
+
+def test_long_whitespace_does_not_hang_the_years_regex():
+    # Audit 30.10: four \s* in a row backtracked cubically, "1" + 800 spaces took ~7 s on one line.
+    t = time.time()
+    assert years("Experience: 1" + " " * 3000 + "x, 3+ years of experience") == 3
+    assert time.time() - t < 1

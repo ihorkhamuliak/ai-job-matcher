@@ -203,9 +203,21 @@ SITES = {"pracuj": "pracuj.pl", "justjoin": "justjoin.it", "rocketjobs": "rocket
          "olx": "olx.pl", "dou": "dou.ua", "nofluffjobs": "nofluffjobs.com"}
 
 
+def _cut(x, n: int) -> str:
+    x = str(x)
+    return x if len(x) <= n else x[:n - 1] + "…"
+
+
+# Model fields had no bounds, and one card over 4096 chars failed send_scan together with every card below it.
+# Real scores: why max ~250 chars, list item max ~100, so these limits never touch a normal card. Cut BEFORE e().
+CARD_WHY, CARD_ITEM, CARD_MAX = 400, 150, 3500
+
+
 def card(final: int, job, s: dict, marks: list[str]) -> str:
     """Visual 10.10 (owner decision): title = link, blocks separated by an empty line, green = 8+.
     The model extract (in English) exists only in scores since 10.10; older ones render without it."""
+    s = {k: ([_cut(i, CARD_ITEM) for i in v] if isinstance(v, list) else
+             _cut(v, CARD_WHY) if k == "why" else _cut(v, 40) if k == "contract" else v) for k, v in s.items()}
     where = "remote" if job.remote else ", ".join(job.cities[:3])
     days = int((time.time() - job.posted_at) // 86400)
     contract = f" · 📄 {e(s['contract'])}" if s.get("contract", "unknown") != "unknown" else ""
@@ -227,6 +239,8 @@ def card(final: int, job, s: dict, marks: list[str]) -> str:
         + ([f"➕ бракує: {e(', '.join(s['missing'][:4]))}"] if s.get("missing") else [])
     if extra:
         lines += [""] + extra
+    while len("\n".join(lines)) > CARD_MAX and len(lines) > 1:  # drop whole lines from the bottom: tags only in line 1
+        lines.pop()
     return "\n".join(lines)
 
 
