@@ -41,7 +41,7 @@ source (10 boards in the private version, examples/jobs.json here)
 - **Sensors instead of hope.** Every scan sends a header even when there is nothing new (silence = the bot is down).
   The header shows sources that returned less than 30% of their 7-day median (broken pagination), postings left
   waiting under the daily cap, and scored cards with no reaction for 2+ days.
-- **Tests carry the reason.** 151 tests, many named after the real posting or incident that produced the rule.
+- **Tests carry the reason.** 154 tests, many named after the real posting or incident that produced the rule.
 
 ## Run the demo
 
